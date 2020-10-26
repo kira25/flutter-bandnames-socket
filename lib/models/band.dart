@@ -20,9 +20,9 @@ class Band {
     int votes;
 
     factory Band.fromJson(Map<String, dynamic> json) => Band(
-        id: json["id"],
-        name: json["name"],
-        votes: json["votes"],
+        id:  json.containsKey('id') ? json["id"] : 'no-id',
+        name:  json.containsKey('name') ? json["name"] : 'no-name',
+        votes: json.containsKey('votes') ? json["votes"] : 'no-votes',
     );
 
     Map<String, dynamic> toJson() => {
